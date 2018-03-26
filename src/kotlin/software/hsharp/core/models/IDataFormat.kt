@@ -1,3 +1,3 @@
 package software.hsharp.core.models
 
-interface IDataFormat : IDataType
+interface IDataFormat : IDataType, INameKeyPair
