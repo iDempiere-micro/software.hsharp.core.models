@@ -5,12 +5,7 @@ import software.hsharp.core.models.IDataTable
 
 data class DataTable (
         override val tableName: String,
+        override val schemaName : String,
         override val columns: Array<IDataColumn>,
-        override val defaultSortBy: IDataColumn,
-        override val limit: Int,
-        override val Key: Int,
-        override val name: String,
-        override val isActive: Boolean) : IDataTable {
-    override val ID: String
-        get() = "" + Key
-}
+        override val limit: Int
+) : IDataTable

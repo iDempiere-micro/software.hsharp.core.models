@@ -1,7 +1,6 @@
 package software.hsharp.core.models
 
-interface IDataSource : INameKeyPair, IDeleteable {
+interface IDataSource  {
     val columns : Array<IDataColumn>
-    val defaultSortBy : IDataColumn
     val limit : Int
 }

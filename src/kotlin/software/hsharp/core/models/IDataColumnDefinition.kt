@@ -1,7 +1,7 @@
 package software.hsharp.core.models
 
-interface IDataColumnDefinition : INameKeyPair {
+interface IDataColumnDefinition  {
     val columnName : String
-    val columnType : IDataType
+    val columnType : String
     val fieldLength : Int
 }
