@@ -9,6 +9,11 @@ interface IGetDataResult : IResult {
     val rs : ResultSet?
 }
 
+interface ICreateDataResult : IResult {
+    val id : Int?
+}
+
+
 interface IDataService : IService {
     val schemasSupported : Array<String>
     fun getData(
@@ -23,6 +28,12 @@ interface IDataService : IService {
             filterName2: String, // LastName
             filterValue2: String // Vokurka
     ): IGetDataResult
+
+    fun createData(
+            connection: Connection,
+            tableName: String,
+            fields: MutableList<Pair<String, Any>>
+    ) : ICreateDataResult
 }
 
 
