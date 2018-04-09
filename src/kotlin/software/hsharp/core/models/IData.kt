@@ -13,6 +13,9 @@ interface ICreateDataResult : IResult {
     val id : Int?
 }
 
+interface IUpdateDataResult : IResult {
+    val id : Int?
+}
 
 interface IDataService : IService {
     val schemasSupported : Array<String>
@@ -34,6 +37,12 @@ interface IDataService : IService {
             tableName: String,
             fields: MutableList<Pair<String, Any>>
     ) : ICreateDataResult
+
+    fun updateData(
+            connection: Connection,
+            tableName: String,
+            id: Int,
+            fields: MutableList<Pair<String, Any>>) : IUpdateDataResult
 }
 
 
