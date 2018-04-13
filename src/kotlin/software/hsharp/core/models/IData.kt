@@ -43,6 +43,8 @@ interface IDataService : IService {
             tableName: String,
             id: Int,
             fields: MutableList<Pair<String, Any>>) : IUpdateDataResult
+
+    fun execute(connection: Connection, procName: String, jsonBody: String): String?
 }
 
 
