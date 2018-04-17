@@ -6,6 +6,5 @@ import software.hsharp.core.models.IDataTable
 data class DataTable (
         override val tableName: String,
         override val schemaName : String,
-        override val columns: Array<IDataColumn>,
-        override val limit: Int
+        override val columns: Array<IDataColumn>
 ) : IDataTable

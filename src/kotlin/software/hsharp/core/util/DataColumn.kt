@@ -6,6 +6,5 @@ data class DataColumn(
         override val isRequired: Boolean,
         override val isReadOnly: Boolean,
         override val columnName: String,
-        override val columnType: String,
-        override val fieldLength: Int
+        override val columnType: String
         ) : IDataColumn
