@@ -17,6 +17,15 @@ interface IUpdateDataResult : IResult {
     val id : Int?
 }
 
+interface IGetTreeDataResult : IResult {
+    val rs : ResultSet?
+}
+
+interface ITreeDataDescriptor {
+    val tableName : String
+    val children: Pair<String, Array<ITreeDataDescriptor>>
+}
+
 interface IDataService : IService {
     val schemasSupported : Array<String>
     fun getData(
@@ -45,6 +54,20 @@ interface IDataService : IService {
             fields: MutableList<Pair<String, Any>>) : IUpdateDataResult
 
     fun execute(connection: Connection, procName: String, jsonBody: String): String?
+
+    fun getTreeData(
+            connection: Connection,
+            root : ITreeDataDescriptor,
+            orderBy : String , // Name
+            orderByOrder : String , // ASC | DESC
+            offset : Int, // 0
+            limit : Int, // 100
+            filterName1: String, // Name
+            filterValue1: String, // Franta
+            filterName2: String, // LastName
+            filterValue2: String // Vokurka
+    ): IGetTreeDataResult
+
 }
 
 

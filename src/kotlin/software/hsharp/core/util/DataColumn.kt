@@ -7,4 +7,8 @@ data class DataColumn(
         override val isReadOnly: Boolean,
         override val columnName: String,
         override val columnType: String
-        ) : IDataColumn
+        ) : IDataColumn, Comparable<DataColumn> {
+        override fun compareTo(other: DataColumn): Int {
+                return columnName.compareTo(other.columnName)
+        }
+}
