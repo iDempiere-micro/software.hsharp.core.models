@@ -27,7 +27,8 @@ interface ITreeDataDescriptor {
 }
 
 interface IDataService : IService {
-    val schemasSupported : Array<String>
+    fun getSchemasSupported( connection : Connection) : Array<String>
+
     fun getData(
             connection: Connection,
             tableName : String,
@@ -72,5 +73,5 @@ interface IDataService : IService {
 
 
 interface IDataServiceRegister : IServiceRegister<IDataService> {
-    fun serviceBySchema( schema : String ) : IDataService?
+    fun serviceBySchema(connection: Connection, schema : String ) : IDataService?
 }
