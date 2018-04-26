@@ -32,6 +32,7 @@ interface IDataService : IService {
     fun getData(
             connection: Connection,
             tableName : String,
+            columnsRequested : Array<String>?, // null => *
             orderBy : String , // Name
             orderByOrder : String , // ASC | DESC
             offset : Int, // 0
