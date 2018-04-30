@@ -9,6 +9,10 @@ interface IGetDataResult : IResult {
     val rs : ResultSet?
 }
 
+interface IGetRowResult : IResult {
+    val rs : ResultSet?
+}
+
 interface ICreateDataResult : IResult {
     val id : Int?
 }
@@ -28,6 +32,13 @@ interface ITreeDataDescriptor {
 
 interface IDataService : IService {
     fun getSchemasSupported( connection : Connection) : Array<String>
+
+    fun getRow(
+            connection: Connection,
+            tableName : String,
+            id : Int
+    ) : IGetRowResult
+
 
     fun getData(
             connection: Connection,
