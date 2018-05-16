@@ -36,7 +36,8 @@ interface IDataService : IService {
     fun getRow(
             connection: Connection,
             tableName : String,
-            id : Int
+            id : Int,
+            anonymous_call : Boolean
     ) : IGetRowResult
 
 
@@ -51,22 +52,29 @@ interface IDataService : IService {
             filterName1: String, // Name
             filterValue1: String, // Franta
             filterName2: String, // LastName
-            filterValue2: String // Vokurka
+            filterValue2: String, // Vokurka
+            anonymous_call : Boolean
     ): IGetDataResult
 
     fun createData(
             connection: Connection,
             tableName: String,
-            fields: MutableList<Pair<String, Any>>
+            fields: MutableList<Pair<String, Any>>,
+            anonymous_call : Boolean
     ) : ICreateDataResult
 
     fun updateData(
             connection: Connection,
             tableName: String,
             id: Int,
-            fields: MutableList<Pair<String, Any>>) : IUpdateDataResult
+            fields: MutableList<Pair<String, Any>>,
+            anonymous_call : Boolean
+    ) : IUpdateDataResult
 
-    fun execute(connection: Connection, procName: String, jsonBody: String): String?
+    fun execute(
+            connection: Connection,
+            procName: String,
+            jsonBody: String): String?
 
     fun getTreeData(
             connection: Connection,

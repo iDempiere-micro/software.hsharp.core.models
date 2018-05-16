@@ -7,4 +7,5 @@ enum class ACCESSRIGHTS {
 interface IDataSource  {
     val columns : Array<IDataColumn>
     val access_rights : Set<ACCESSRIGHTS>
+    val allow_anonymous : Boolean
 }
