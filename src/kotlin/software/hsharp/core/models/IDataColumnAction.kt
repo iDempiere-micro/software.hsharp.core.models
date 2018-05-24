@@ -8,5 +8,5 @@ interface INameValueString {
 interface IDataColumnAction  {
     val type : String
     val url : String
-    val params : Array<INameValueString>
+    val params : Array<INameValueString>?
 }

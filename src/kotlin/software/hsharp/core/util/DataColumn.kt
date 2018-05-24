@@ -14,7 +14,7 @@ data class NameValueString(
 data class DataColumnAction(
     override val type : String,
     override val url : String,
-    override val params : Array<INameValueString>  
+    override val params : Array<INameValueString>?  
 ) : IDataColumnAction {
 
 }
