@@ -10,7 +10,13 @@ interface IGetDataResult : IResult {
 }
 
 interface IGetRowResult : IResult {
+}
+
+interface IGetRowResultData : IGetRowResult {
     val rs : ResultSet?
+}
+interface IGetRowResultObject : IGetRowResult {
+    val o : Any?
 }
 
 interface ICreateDataResult : IResult {
