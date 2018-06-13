@@ -4,6 +4,7 @@ import software.hsharp.core.services.IService
 import software.hsharp.core.services.IServiceRegister
 import java.sql.Connection
 import java.sql.ResultSet
+import software.hsharp.core.models.IDataTable
 
 interface IGetDataResult : IResult {
     val rs : ResultSet?
@@ -64,7 +65,8 @@ interface IDataService : IService {
 
     fun createData(
             connection: Connection,
-            tableName: String,
+            tableName : String,
+            table: IDataTable?,
             fields: MutableList<Pair<String, Any>>,
             anonymous_call : Boolean
     ) : ICreateDataResult
