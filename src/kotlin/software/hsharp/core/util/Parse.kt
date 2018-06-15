@@ -1,4 +1,4 @@
-package software.hsharp.core.utils
+package software.hsharp.core.util
 
 import com.fasterxml.jackson.core.JsonFactory
 import com.fasterxml.jackson.databind.JsonNode
