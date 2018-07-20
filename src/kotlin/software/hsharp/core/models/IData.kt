@@ -74,6 +74,7 @@ interface IDataService : IService {
     fun updateData(
             connection: Connection,
             tableName: String,
+            table: IDataTable?,
             id: Int,
             fields: MutableList<Pair<String, Any>>,
             anonymous_call : Boolean
